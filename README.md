@@ -1,4 +1,10 @@
-# Reproduce crash related to macOS Sonomo (14.0) & using a generic struct with `JSONDecoder`
+# macOS Sonoma (14.0) & generic struct with `JSONDecoder` = crash
+
+This repository holds a small sample project to reproduce a crash that we were
+experiencing in our app, [Pullwalla](https://pullwalla.com) after the macOS
+Sonoma (14.0) upgrade.
+
+## Background & Details
 
 We have an application, [Pullwalla](https://pullwalla.com), that has run fine
 on macOS until the most recent version, macOS Sonoma (14.0). Any users that
