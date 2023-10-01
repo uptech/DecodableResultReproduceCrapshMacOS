@@ -63,10 +63,17 @@ extension Result: Decodable where Success: Decodable, Failure == DecodingError {
 ```
 
 When running in Xcode with the debugger we can see that the crash is related to
-the `decoder.decode()` call. But the interesting thing is that the crash only
-happens when I am asking it to decode `BitbucketPaginatedResponse<T>`. If we
-create a non-generic version of this struct called
-`BitbucketPaginatedResponseNonGeneric` as follows then it won't crash.
+the `decoder.decode()` call.
+
+![alt text](https://github.com/uptech/DecodableResultReproduceCrapshMacOS/blob/main/screenshots/crash_stack_trace.png?raw=true)
+
+![alt text](https://github.com/uptech/DecodableResultReproduceCrapshMacOS/blob/main/screenshots/line_code_highlighted_when_crashed.png?raw=true)
+
+
+But the interesting thing is that the crash only happens when I am asking it to
+decode `BitbucketPaginatedResponse<T>`. If we create a non-generic version of
+this struct called `BitbucketPaginatedResponseNonGeneric` as follows then it
+won't crash.
 
 ```swift
 public struct BitbucketPaginatedResponseNonGeneric: Decodable {
@@ -81,12 +88,15 @@ public struct BitbucketPaginatedResponseNonGeneric: Decodable {
 
 This doesn't really help our situation in terms of a work around as the
 pagination pattern in Bitbucket's payloads is a generic pattern. So we really
-need the generic to work again with decode(). But at least it helps give us so
-more confidence that the issue is actually with the fact that the struct is
-generic.
+need the generic to work again with `decode()`. But at least it helps give us
+some more confidence that the issue is actually with the fact that the struct
+is generic.
 
 Also, in the stack trace when the crash occurs the next step up is related to
 the witness table. This makes me think that part of the dynamic dispatch and
 looking up of the method is failing and causing the crash.
 
+![alt text](https://github.com/uptech/DecodableResultReproduceCrapshMacOS/blob/main/screenshots/witness_table_stack_step.png?raw=true)
+
+![alt text](https://github.com/uptech/DecodableResultReproduceCrapshMacOS/blob/main/screenshots/getTypeContextDescriptor_stack_step.png?raw=true)
 
