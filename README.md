@@ -126,3 +126,8 @@ my current understanding.
 
 After digging into to compiler optimization settings it looks Debug is set
 properly with no optimizations. So that isn't likely it.
+
+Also, the app which was compiled with prev version of Xcode on prev version of
+macOS is also crashing. So whatever is going on with the witness table and that
+stuff is has changed by simply installing macOS 14.0 (Sonoma). It was NOT
+something that happened only after building with the new Xcode and new OS.
