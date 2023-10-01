@@ -106,3 +106,4 @@ looking up of the method is failing and causing the crash.
 
 ![alt text](https://github.com/uptech/DecodableResultReproduceCrapshMacOS/blob/main/screenshots/getTypeContextDescriptor_stack_step.png?raw=true)
 
+I have also provided a full crash report, [here](https://github.com/uptech/DecodableResultReproduceCrapshMacOS/blob/main/CrashReport.txt?raw=true).

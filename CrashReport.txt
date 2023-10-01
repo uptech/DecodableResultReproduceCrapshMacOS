@@ -1,0 +1,396 @@
+-------------------------------------
+Translated Report (Full Report Below)
+-------------------------------------
+
+Process:               DecodableResultReproduceCrapshMacOS [11822]
+Path:                  /Users/USER/Library/Developer/Xcode/DerivedData/DecodableResultReproduceCrapshMacOS-gcinduxmufvoyvfbqaqvshtrjieb/Build/Products/Debug/DecodableResultReproduceCrapshMacOS.app/Contents/MacOS/DecodableResultReproduceCrapshMacOS
+Identifier:            ch.upte.DecodableResultReproduceCrapshMacOS
+Version:               1.0 (1)
+Code Type:             ARM-64 (Native)
+Parent Process:        launchd [1]
+User ID:               501
+
+Date/Time:             2023-09-30 22:10:44.5909 -0400
+OS Version:            macOS 14.0 (23A344)
+Report Version:        12
+Anonymous UUID:        8DE54200-CEA4-8969-C1AF-17408FF9CF04
+
+Sleep/Wake UUID:       679435A2-70BF-4071-9095-FB7F09BC247E
+
+Time Awake Since Boot: 110000 seconds
+Time Since Wake:       4912 seconds
+
+System Integrity Protection: enabled
+
+Crashed Thread:        0  Dispatch queue: com.apple.main-thread
+
+Exception Type:        EXC_BAD_ACCESS (SIGSEGV)
+Exception Codes:       KERN_INVALID_ADDRESS at 0x0000000000000000
+Exception Codes:       0x0000000000000001, 0x0000000000000000
+
+Termination Reason:    Namespace SIGNAL, Code 11 Segmentation fault: 11
+Terminating Process:   exc handler [11822]
+
+VM Region Info: 0 is not in any region.  Bytes before following region: 4302618624
+      REGION TYPE                    START - END         [ VSIZE] PRT/MAX SHRMOD  REGION DETAIL
+      UNUSED SPACE AT START
+--->  
+      __TEXT                      10074c000-100754000    [   32K] r-x/r-x SM=COW  ...ceCrapshMacOS
+
+Thread 0 Crashed::  Dispatch queue: com.apple.main-thread
+0   libswiftCore.dylib            	       0x19d156b94 swift::TargetMetadata<swift::InProcess>::getTypeContextDescriptor() const + 4
+1   libswiftCore.dylib            	       0x19d172f04 swift::TargetMetadata<swift::InProcess>::getGenericArgs() const + 24
+2   libswiftCore.dylib            	       0x19d18a134 instantiateWitnessTable(swift::TargetMetadata<swift::InProcess> const*, swift::TargetProtocolConformanceDescriptor<swift::InProcess> const*, void const* const*, void**) + 260
+3   libswiftCore.dylib            	       0x19d17e8e4 swift::_getWitnessTable(swift::TargetProtocolConformanceDescriptor<swift::InProcess> const*, swift::TargetMetadata<swift::InProcess> const*, void const* const*) + 4704
+4   DecodableResultReproduceCrapshMacOS	       0x1007524bc lazy protocol witness table accessor for type BitbucketPaginatedResponse<Result<String, DecodingError>> and conformance BitbucketPaginatedResponse<A> + 72
+5   DecodableResultReproduceCrapshMacOS	       0x10074fe0c closure #1 in closure #1 in ContentView.body.getter + 1304 (ContentView.swift:62)
+6   SwiftUI                       	       0x1b95b2188 0x1b7cee000 + 25969032
+7   SwiftUI                       	       0x1b8eb8da0 0x1b7cee000 + 18656672
+8   SwiftUI                       	       0x1b8ed77e0 0x1b7cee000 + 18782176
+9   SwiftUI                       	       0x1b8d55bd0 0x1b7cee000 + 17202128
+10  SwiftUI                       	       0x1b959fd84 0x1b7cee000 + 25894276
+11  SwiftUI                       	       0x1b959f53c 0x1b7cee000 + 25892156
+12  SwiftUI                       	       0x1b8ebf190 0x1b7cee000 + 18682256
+13  SwiftUI                       	       0x1b8ebf284 0x1b7cee000 + 18682500
+14  AppKit                        	       0x19100a68c -[NSApplication(NSResponder) sendAction:to:from:] + 460
+15  AppKit                        	       0x19136b4d4 __40-[NSControl _sendActionsForEvents:view:]_block_invoke + 216
+16  AppKit                        	       0x19136b3ac -[NSControl _sendActionsForEvents:view:] + 216
+17  AppKit                        	       0x1910078d8 NSControlTrackMouse + 1616
+18  AppKit                        	       0x19100725c -[NSCell trackMouse:inRect:ofView:untilMouseUp:] + 144
+19  AppKit                        	       0x191007114 -[NSButtonCell trackMouse:inRect:ofView:untilMouseUp:] + 488
+20  AppKit                        	       0x1910065e8 -[NSControl mouseDown:] + 448
+21  AppKit                        	       0x1910053b4 -[NSWindow(NSEventRouting) _handleMouseDownEvent:isDelayedEvent:] + 3472
+22  AppKit                        	       0x190f90b6c -[NSWindow(NSEventRouting) _reallySendEvent:isDelayedEvent:] + 364
+23  AppKit                        	       0x190f9082c -[NSWindow(NSEventRouting) sendEvent:] + 284
+24  AppKit                        	       0x191637c08 -[NSApplication(NSEventRouting) sendEvent:] + 1556
+25  AppKit                        	       0x19128b1bc -[NSApplication _handleEvent:] + 60
+26  AppKit                        	       0x190e58460 -[NSApplication run] + 512
+27  AppKit                        	       0x190e2f708 NSApplicationMain + 880
+28  SwiftUI                       	       0x1b7dc5944 0x1b7cee000 + 883012
+29  SwiftUI                       	       0x1b864f014 0x1b7cee000 + 9834516
+30  SwiftUI                       	       0x1b8a6945c 0x1b7cee000 + 14136412
+31  DecodableResultReproduceCrapshMacOS	       0x100752874 static DecodableResultReproduceCrapshMacOSApp.$main() + 40
+32  DecodableResultReproduceCrapshMacOS	       0x100752924 main + 12 (DecodableResultReproduceCrapshMacOSApp.swift:11)
+33  dyld                          	       0x18d235058 start + 2224
+
+Thread 1:
+0   libsystem_pthread.dylib       	       0x18d5a9e28 start_wqthread + 0
+
+Thread 2:
+0   libsystem_pthread.dylib       	       0x18d5a9e28 start_wqthread + 0
+
+Thread 3:
+0   libsystem_pthread.dylib       	       0x18d5a9e28 start_wqthread + 0
+
+Thread 4:
+0   libsystem_pthread.dylib       	       0x18d5a9e28 start_wqthread + 0
+
+Thread 5:: com.apple.NSEventThread
+0   libsystem_kernel.dylib        	       0x18d56e8b4 mach_msg2_trap + 8
+1   libsystem_kernel.dylib        	       0x18d580d30 mach_msg2_internal + 80
+2   libsystem_kernel.dylib        	       0x18d5774f0 mach_msg_overwrite + 476
+3   libsystem_kernel.dylib        	       0x18d56ec38 mach_msg + 24
+4   CoreFoundation                	       0x18d68bed0 __CFRunLoopServiceMachPort + 160
+5   CoreFoundation                	       0x18d68a798 __CFRunLoopRun + 1208
+6   CoreFoundation                	       0x18d689c2c CFRunLoopRunSpecific + 608
+7   AppKit                        	       0x190f8e8e0 _NSEventThread + 144
+8   libsystem_pthread.dylib       	       0x18d5af034 _pthread_start + 136
+9   libsystem_pthread.dylib       	       0x18d5a9e3c thread_start + 8
+
+Thread 6:
+0   libsystem_pthread.dylib       	       0x18d5a9e28 start_wqthread + 0
+
+
+Thread 0 crashed with ARM Thread State (64-bit):
+    x0: 0x0000000000000000   x1: 0x00000001007532f8   x2: 0xffffffb4ffffb078   x3: 0x000000015089c588
+    x4: 0x0000000000000003   x5: 0x0000000000002460   x6: 0x0000600001e86460   x7: 0x0000000000000000
+    x8: 0x000000010075330c   x9: 0x0000000100753308  x10: 0x0000000000000001  x11: 0x000000000000000c
+   x12: 0x0000600001e96178  x13: 0x00000000001ff800  x14: 0x00000000000007fb  x15: 0x0000000087cd4a47
+   x16: 0x0000000000000000  x17: 0x000000000000e909  x18: 0x0000000000000000  x19: 0x0000000000000000
+   x20: 0x0000000000000000  x21: 0x0000000100753308  x22: 0x000000015089c588  x23: 0x00000001007532f8
+   x24: 0x00000001007532f8  x25: 0x000000019d2f4e4c  x26: 0x0000000000000000  x27: 0x000000015089c570
+   x28: 0x0000600001e86460   fp: 0x000000016f6b2150   lr: 0x000000019d172f04
+    sp: 0x000000016f6b2140   pc: 0x000000019d156b94 cpsr: 0x60001000
+   far: 0x0000000000000000  esr: 0x92000006 (Data Abort) byte read Translation fault
+
+Binary Images:
+       0x100b54000 -        0x100b5ffff libobjc-trampolines.dylib (*) <562f95b3-8118-3d61-a13f-34e819dd863d> /usr/lib/libobjc-trampolines.dylib
+       0x10074c000 -        0x100753fff ch.upte.DecodableResultReproduceCrapshMacOS (1.0) <d4f92f4f-6ded-36d0-a4ca-b89a50442c51> /Users/USER/Library/Developer/Xcode/DerivedData/DecodableResultReproduceCrapshMacOS-gcinduxmufvoyvfbqaqvshtrjieb/Build/Products/Debug/DecodableResultReproduceCrapshMacOS.app/Contents/MacOS/DecodableResultReproduceCrapshMacOS
+       0x19cdd9000 -        0x19d318fff libswiftCore.dylib (*) <9d952ae1-e049-3444-96e3-0a5756c0b89d> /usr/lib/swift/libswiftCore.dylib
+       0x1b7cee000 -        0x1b9abdfff com.apple.SwiftUI (5.0.83.1.405) <27e26874-864d-398c-9050-b379accd2cec> /System/Library/Frameworks/SwiftUI.framework/Versions/A/SwiftUI
+       0x190e2b000 -        0x19213bfff com.apple.AppKit (6.9) <a4e78dd1-6b6e-3f57-924a-4a6a2e679789> /System/Library/Frameworks/AppKit.framework/Versions/C/AppKit
+       0x18d22f000 -        0x18d2c2873 dyld (*) <ffd8ab66-c9ab-31df-ab80-3a3dff367ddd> /usr/lib/dyld
+               0x0 - 0xffffffffffffffff ??? (*) <00000000-0000-0000-0000-000000000000> ???
+       0x18d5a8000 -        0x18d5b4ff3 libsystem_pthread.dylib (*) <e4debb6e-421d-33d0-9e17-77ae0e0fe4dc> /usr/lib/system/libsystem_pthread.dylib
+       0x18d56d000 -        0x18d5a7fef libsystem_kernel.dylib (*) <a7d3c07d-0a1e-3c4c-8fba-66905e16bf99> /usr/lib/system/libsystem_kernel.dylib
+       0x18d60e000 -        0x18dae4fff com.apple.CoreFoundation (6.9) <a68b8c77-1dbd-35b0-83fe-42ad58dd6629> /System/Library/Frameworks/CoreFoundation.framework/Versions/A/CoreFoundation
+
+External Modification Summary:
+  Calls made by other processes targeting this process:
+    task_for_pid: 0
+    thread_create: 0
+    thread_set_state: 0
+  Calls made by this process:
+    task_for_pid: 0
+    thread_create: 0
+    thread_set_state: 0
+  Calls made by all processes on this machine:
+    task_for_pid: 103
+    thread_create: 0
+    thread_set_state: 6870
+
+VM Region Summary:
+ReadOnly portion of Libraries: Total=1.4G resident=0K(0%) swapped_out_or_unallocated=1.4G(100%)
+Writable regions: Total=1.1G written=0K(0%) resident=0K(0%) swapped_out=0K(0%) unallocated=1.1G(100%)
+
+                                VIRTUAL   REGION 
+REGION TYPE                        SIZE    COUNT (non-coalesced) 
+===========                     =======  ======= 
+Accelerate framework               128K        1 
+Activity Tracing                   256K        1 
+AttributeGraph Data               1024K        1 
+CG image                            48K        3 
+ColorSync                          576K       27 
+CoreAnimation                      688K       38 
+CoreGraphics                        32K        2 
+CoreGraphics (reserved)             16K        1         reserved VM address space (unallocated)
+CoreUI image data                 1072K        7 
+Foundation                          16K        1 
+Kernel Alloc Once                   32K        1 
+MALLOC                             1.1G       51 
+MALLOC guard page                  288K       18 
+STACK GUARD                       56.1M        7 
+Stack                             11.2M        7 
+VM_ALLOCATE                        128K        8 
+__AUTH                            1441K      254 
+__AUTH_CONST                      23.2M      438 
+__CTF                               824        1 
+__DATA                            9952K      423 
+__DATA_CONST                      21.3M      443 
+__DATA_DIRTY                      1292K      139 
+__FONT_DATA                        2352        1 
+__LINKEDIT                       886.6M        3 
+__OBJC_RO                         70.6M        1 
+__OBJC_RW                         2153K        1 
+__TEXT                           524.3M      459 
+dyld private memory                272K        2 
+mapped file                      164.9M       27 
+shared memory                     1360K       13 
+===========                     =======  ======= 
+TOTAL                              2.8G     2379 
+TOTAL, minus reserved VM space     2.8G     2379 
+
+
+
+-----------
+Full Report
+-----------
+
+{"app_name":"DecodableResultReproduceCrapshMacOS","timestamp":"2023-09-30 22:10:44.00 -0400","app_version":"1.0","slice_uuid":"d4f92f4f-6ded-36d0-a4ca-b89a50442c51","build_version":"1","platform":1,"bundleID":"ch.upte.DecodableResultReproduceCrapshMacOS","share_with_app_devs":1,"is_first_party":0,"bug_type":"309","os_version":"macOS 14.0 (23A344)","roots_installed":0,"name":"DecodableResultReproduceCrapshMacOS","incident_id":"BFD21D55-88B2-464C-A9C3-34C5D1B3C9E9"}
+{
+  "uptime" : 110000,
+  "procRole" : "Foreground",
+  "version" : 2,
+  "userID" : 501,
+  "deployVersion" : 210,
+  "modelCode" : "MacBookPro18,4",
+  "coalitionID" : 12901,
+  "osVersion" : {
+    "train" : "macOS 14.0",
+    "build" : "23A344",
+    "releaseType" : "User"
+  },
+  "captureTime" : "2023-09-30 22:10:44.5909 -0400",
+  "codeSigningMonitor" : 1,
+  "incident" : "BFD21D55-88B2-464C-A9C3-34C5D1B3C9E9",
+  "pid" : 11822,
+  "translated" : false,
+  "cpuType" : "ARM-64",
+  "roots_installed" : 0,
+  "bug_type" : "309",
+  "procLaunch" : "2023-09-30 22:10:41.7350 -0400",
+  "procStartAbsTime" : 2842946758324,
+  "procExitAbsTime" : 2843015122773,
+  "procName" : "DecodableResultReproduceCrapshMacOS",
+  "procPath" : "\/Users\/USER\/Library\/Developer\/Xcode\/DerivedData\/DecodableResultReproduceCrapshMacOS-gcinduxmufvoyvfbqaqvshtrjieb\/Build\/Products\/Debug\/DecodableResultReproduceCrapshMacOS.app\/Contents\/MacOS\/DecodableResultReproduceCrapshMacOS",
+  "bundleInfo" : {"CFBundleShortVersionString":"1.0","CFBundleVersion":"1","CFBundleIdentifier":"ch.upte.DecodableResultReproduceCrapshMacOS"},
+  "storeInfo" : {"deviceIdentifierForVendor":"EE3EE348-2746-5024-A9A8-A2E8034F8B4C","thirdParty":true},
+  "parentProc" : "launchd",
+  "parentPid" : 1,
+  "coalitionName" : "ch.upte.DecodableResultReproduceCrapshMacOS",
+  "crashReporterKey" : "8DE54200-CEA4-8969-C1AF-17408FF9CF04",
+  "codeSigningID" : "ch.upte.DecodableResultReproduceCrapshMacOS",
+  "codeSigningTeamID" : "6449Q3J4XH",
+  "codeSigningFlags" : 1644245781,
+  "codeSigningValidationCategory" : 3,
+  "codeSigningTrustLevel" : 4294967295,
+  "instructionByteStream" : {"beforePC":"sGzx8vEDAKoRCsHaEQEA+cADX9YoQADRIP\/\/tR8BAPnAA1\/WEACA0g==","atPC":"CABA+R\/9H\/Hog4gaHwkIcWwCAFQJAQhRPw0AceICAFQIjED4qAYAtA=="},
+  "wakeTime" : 4912,
+  "sleepWakeUUID" : "679435A2-70BF-4071-9095-FB7F09BC247E",
+  "sip" : "enabled",
+  "vmRegionInfo" : "0 is not in any region.  Bytes before following region: 4302618624\n      REGION TYPE                    START - END         [ VSIZE] PRT\/MAX SHRMOD  REGION DETAIL\n      UNUSED SPACE AT START\n--->  \n      __TEXT                      10074c000-100754000    [   32K] r-x\/r-x SM=COW  ...ceCrapshMacOS",
+  "exception" : {"codes":"0x0000000000000001, 0x0000000000000000","rawCodes":[1,0],"type":"EXC_BAD_ACCESS","signal":"SIGSEGV","subtype":"KERN_INVALID_ADDRESS at 0x0000000000000000"},
+  "termination" : {"flags":0,"code":11,"namespace":"SIGNAL","indicator":"Segmentation fault: 11","byProc":"exc handler","byPid":11822},
+  "vmregioninfo" : "0 is not in any region.  Bytes before following region: 4302618624\n      REGION TYPE                    START - END         [ VSIZE] PRT\/MAX SHRMOD  REGION DETAIL\n      UNUSED SPACE AT START\n--->  \n      __TEXT                      10074c000-100754000    [   32K] r-x\/r-x SM=COW  ...ceCrapshMacOS",
+  "extMods" : {"caller":{"thread_create":0,"thread_set_state":0,"task_for_pid":0},"system":{"thread_create":0,"thread_set_state":6870,"task_for_pid":103},"targeted":{"thread_create":0,"thread_set_state":0,"task_for_pid":0},"warnings":0},
+  "faultingThread" : 0,
+  "threads" : [{"triggered":true,"id":2783580,"threadState":{"x":[{"value":0},{"value":4302648056,"symbolLocation":0,"symbol":"protocol conformance descriptor for BitbucketPaginatedResponse<A>"},{"value":18446743751586984056},{"value":5646173576},{"value":3},{"value":9312},{"value":105553148273760},{"value":0},{"value":4302648076,"symbolLocation":20,"symbol":"protocol conformance descriptor for BitbucketPaginatedResponse<A>"},{"value":4302648072,"symbolLocation":16,"symbol":"protocol conformance descriptor for BitbucketPaginatedResponse<A>"},{"value":1},{"value":12},{"value":105553148338552},{"value":2095104},{"value":2043},{"value":2278378055},{"value":0},{"value":59657},{"value":0},{"value":0},{"value":0},{"value":4302648072,"symbolLocation":16,"symbol":"protocol conformance descriptor for BitbucketPaginatedResponse<A>"},{"value":5646173576},{"value":4302648056,"symbolLocation":0,"symbol":"protocol conformance descriptor for BitbucketPaginatedResponse<A>"},{"value":4302648056,"symbolLocation":0,"symbol":"protocol conformance descriptor for BitbucketPaginatedResponse<A>"},{"value":6932090444,"symbolLocation":0,"symbol":"protocol descriptor for Decodable"},{"value":0},{"value":5646173552},{"value":105553148273760}],"flavor":"ARM_THREAD_STATE64","lr":{"value":6930509572},"cpsr":{"value":1610616832},"fp":{"value":6164259152},"sp":{"value":6164259136},"esr":{"value":2449473542,"description":"(Data Abort) byte read Translation fault"},"pc":{"value":6930394004,"matchesCrashFrame":1},"far":{"value":0}},"queue":"com.apple.main-thread","frames":[{"imageOffset":3660692,"symbol":"swift::TargetMetadata<swift::InProcess>::getTypeContextDescriptor() const","symbolLocation":4,"imageIndex":2},{"imageOffset":3776260,"symbol":"swift::TargetMetadata<swift::InProcess>::getGenericArgs() const","symbolLocation":24,"imageIndex":2},{"imageOffset":3871028,"symbol":"instantiateWitnessTable(swift::TargetMetadata<swift::InProcess> const*, swift::TargetProtocolConformanceDescriptor<swift::InProcess> const*, void const* const*, void**)","symbolLocation":260,"imageIndex":2},{"imageOffset":3823844,"symbol":"swift::_getWitnessTable(swift::TargetProtocolConformanceDescriptor<swift::InProcess> const*, swift::TargetMetadata<swift::InProcess> const*, void const* const*)","symbolLocation":4704,"imageIndex":2},{"imageOffset":25788,"sourceFile":"<compiler-generated>","symbol":"lazy protocol witness table accessor for type BitbucketPaginatedResponse<Result<String, DecodingError>> and conformance BitbucketPaginatedResponse<A>","symbolLocation":72,"imageIndex":1},{"imageOffset":15884,"sourceLine":62,"sourceFile":"ContentView.swift","symbol":"closure #1 in closure #1 in ContentView.body.getter","imageIndex":1,"symbolLocation":1304},{"imageOffset":25969032,"imageIndex":3},{"imageOffset":18656672,"imageIndex":3},{"imageOffset":18782176,"imageIndex":3},{"imageOffset":17202128,"imageIndex":3},{"imageOffset":25894276,"imageIndex":3},{"imageOffset":25892156,"imageIndex":3},{"imageOffset":18682256,"imageIndex":3},{"imageOffset":18682500,"imageIndex":3},{"imageOffset":1963660,"symbol":"-[NSApplication(NSResponder) sendAction:to:from:]","symbolLocation":460,"imageIndex":4},{"imageOffset":5506260,"symbol":"__40-[NSControl _sendActionsForEvents:view:]_block_invoke","symbolLocation":216,"imageIndex":4},{"imageOffset":5505964,"symbol":"-[NSControl _sendActionsForEvents:view:]","symbolLocation":216,"imageIndex":4},{"imageOffset":1951960,"symbol":"NSControlTrackMouse","symbolLocation":1616,"imageIndex":4},{"imageOffset":1950300,"symbol":"-[NSCell trackMouse:inRect:ofView:untilMouseUp:]","symbolLocation":144,"imageIndex":4},{"imageOffset":1949972,"symbol":"-[NSButtonCell trackMouse:inRect:ofView:untilMouseUp:]","symbolLocation":488,"imageIndex":4},{"imageOffset":1947112,"symbol":"-[NSControl mouseDown:]","symbolLocation":448,"imageIndex":4},{"imageOffset":1942452,"symbol":"-[NSWindow(NSEventRouting) _handleMouseDownEvent:isDelayedEvent:]","symbolLocation":3472,"imageIndex":4},{"imageOffset":1465196,"symbol":"-[NSWindow(NSEventRouting) _reallySendEvent:isDelayedEvent:]","symbolLocation":364,"imageIndex":4},{"imageOffset":1464364,"symbol":"-[NSWindow(NSEventRouting) sendEvent:]","symbolLocation":284,"imageIndex":4},{"imageOffset":8440840,"symbol":"-[NSApplication(NSEventRouting) sendEvent:]","symbolLocation":1556,"imageIndex":4},{"imageOffset":4587964,"symbol":"-[NSApplication _handleEvent:]","symbolLocation":60,"imageIndex":4},{"imageOffset":185440,"symbol":"-[NSApplication run]","symbolLocation":512,"imageIndex":4},{"imageOffset":18184,"symbol":"NSApplicationMain","symbolLocation":880,"imageIndex":4},{"imageOffset":883012,"imageIndex":3},{"imageOffset":9834516,"imageIndex":3},{"imageOffset":14136412,"imageIndex":3},{"imageOffset":26740,"sourceFile":"<compiler-generated>","symbol":"static DecodableResultReproduceCrapshMacOSApp.$main()","symbolLocation":40,"imageIndex":1},{"imageOffset":26916,"sourceLine":11,"sourceFile":"DecodableResultReproduceCrapshMacOSApp.swift","symbol":"main","imageIndex":1,"symbolLocation":12},{"imageOffset":24664,"symbol":"start","symbolLocation":2224,"imageIndex":5}]},{"id":2783621,"frames":[{"imageOffset":7720,"symbol":"start_wqthread","symbolLocation":0,"imageIndex":7}],"threadState":{"x":[{"value":6164819968},{"value":4103},{"value":6164283392},{"value":0},{"value":409604},{"value":18446744073709551615},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0}],"flavor":"ARM_THREAD_STATE64","lr":{"value":0},"cpsr":{"value":4096},"fp":{"value":0},"sp":{"value":6164819968},"esr":{"value":1442840704,"description":" Address size fault"},"pc":{"value":6666493480},"far":{"value":4433772544}}},{"id":2783622,"frames":[{"imageOffset":7720,"symbol":"start_wqthread","symbolLocation":0,"imageIndex":7}],"threadState":{"x":[{"value":6165393408},{"value":5891},{"value":6164856832},{"value":0},{"value":409604},{"value":18446744073709551615},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0}],"flavor":"ARM_THREAD_STATE64","lr":{"value":0},"cpsr":{"value":4096},"fp":{"value":0},"sp":{"value":6165393408},"esr":{"value":1442840704,"description":" Address size fault"},"pc":{"value":6666493480},"far":{"value":4480974856}}},{"id":2783627,"frames":[{"imageOffset":7720,"symbol":"start_wqthread","symbolLocation":0,"imageIndex":7}],"threadState":{"x":[{"value":6165966848},{"value":17671},{"value":6165430272},{"value":0},{"value":409604},{"value":18446744073709551615},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0}],"flavor":"ARM_THREAD_STATE64","lr":{"value":0},"cpsr":{"value":4096},"fp":{"value":0},"sp":{"value":6165966848},"esr":{"value":1442840704,"description":" Address size fault"},"pc":{"value":6666493480},"far":{"value":4480974856}}},{"id":2783648,"frames":[{"imageOffset":7720,"symbol":"start_wqthread","symbolLocation":0,"imageIndex":7}],"threadState":{"x":[{"value":6166540288},{"value":54275},{"value":6166003712},{"value":0},{"value":409604},{"value":18446744073709551615},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0}],"flavor":"ARM_THREAD_STATE64","lr":{"value":0},"cpsr":{"value":4096},"fp":{"value":0},"sp":{"value":6166540288},"esr":{"value":1442840704,"description":" Address size fault"},"pc":{"value":6666493480},"far":{"value":4483317760}}},{"id":2783649,"name":"com.apple.NSEventThread","threadState":{"x":[{"value":268451845},{"value":21592279046},{"value":8589934592},{"value":200124001157120},{"value":0},{"value":200124001157120},{"value":2},{"value":4294967295},{"value":18446744073709550527},{"value":46595},{"value":0},{"value":1},{"value":46595},{"value":124491},{"value":0},{"value":0},{"value":18446744073709551569},{"value":8282312784},{"value":0},{"value":4294967295},{"value":2},{"value":200124001157120},{"value":0},{"value":200124001157120},{"value":6167109736},{"value":8589934592},{"value":21592279046},{"value":21592279046},{"value":4412409862}],"flavor":"ARM_THREAD_STATE64","lr":{"value":6666325296},"cpsr":{"value":4096},"fp":{"value":6167109584},"sp":{"value":6167109504},"esr":{"value":1442840704,"description":" Address size fault"},"pc":{"value":6666250420},"far":{"value":4480614400}},"frames":[{"imageOffset":6324,"symbol":"mach_msg2_trap","symbolLocation":8,"imageIndex":8},{"imageOffset":81200,"symbol":"mach_msg2_internal","symbolLocation":80,"imageIndex":8},{"imageOffset":42224,"symbol":"mach_msg_overwrite","symbolLocation":476,"imageIndex":8},{"imageOffset":7224,"symbol":"mach_msg","symbolLocation":24,"imageIndex":8},{"imageOffset":515792,"symbol":"__CFRunLoopServiceMachPort","symbolLocation":160,"imageIndex":9},{"imageOffset":509848,"symbol":"__CFRunLoopRun","symbolLocation":1208,"imageIndex":9},{"imageOffset":506924,"symbol":"CFRunLoopRunSpecific","symbolLocation":608,"imageIndex":9},{"imageOffset":1456352,"symbol":"_NSEventThread","symbolLocation":144,"imageIndex":4},{"imageOffset":28724,"symbol":"_pthread_start","symbolLocation":136,"imageIndex":7},{"imageOffset":7740,"symbol":"thread_start","symbolLocation":8,"imageIndex":7}]},{"id":2783677,"frames":[{"imageOffset":7720,"symbol":"start_wqthread","symbolLocation":0,"imageIndex":7}],"threadState":{"x":[{"value":6167687168},{"value":0},{"value":6167150592},{"value":0},{"value":278532},{"value":18446744073709551615},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0},{"value":0}],"flavor":"ARM_THREAD_STATE64","lr":{"value":0},"cpsr":{"value":4096},"fp":{"value":0},"sp":{"value":6167687168},"esr":{"value":0,"description":" Address size fault"},"pc":{"value":6666493480},"far":{"value":0}}}],
+  "usedImages" : [
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 4306845696,
+    "size" : 49152,
+    "uuid" : "562f95b3-8118-3d61-a13f-34e819dd863d",
+    "path" : "\/usr\/lib\/libobjc-trampolines.dylib",
+    "name" : "libobjc-trampolines.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64",
+    "base" : 4302618624,
+    "CFBundleShortVersionString" : "1.0",
+    "CFBundleIdentifier" : "ch.upte.DecodableResultReproduceCrapshMacOS",
+    "size" : 32768,
+    "uuid" : "d4f92f4f-6ded-36d0-a4ca-b89a50442c51",
+    "path" : "\/Users\/USER\/Library\/Developer\/Xcode\/DerivedData\/DecodableResultReproduceCrapshMacOS-gcinduxmufvoyvfbqaqvshtrjieb\/Build\/Products\/Debug\/DecodableResultReproduceCrapshMacOS.app\/Contents\/MacOS\/DecodableResultReproduceCrapshMacOS",
+    "name" : "DecodableResultReproduceCrapshMacOS",
+    "CFBundleVersion" : "1"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 6926733312,
+    "size" : 5505024,
+    "uuid" : "9d952ae1-e049-3444-96e3-0a5756c0b89d",
+    "path" : "\/usr\/lib\/swift\/libswiftCore.dylib",
+    "name" : "libswiftCore.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 7378755584,
+    "CFBundleShortVersionString" : "5.0.83.1.405",
+    "CFBundleIdentifier" : "com.apple.SwiftUI",
+    "size" : 31260672,
+    "uuid" : "27e26874-864d-398c-9050-b379accd2cec",
+    "path" : "\/System\/Library\/Frameworks\/SwiftUI.framework\/Versions\/A\/SwiftUI",
+    "name" : "SwiftUI",
+    "CFBundleVersion" : "5.0.83.1.405"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 6725742592,
+    "CFBundleShortVersionString" : "6.9",
+    "CFBundleIdentifier" : "com.apple.AppKit",
+    "size" : 19992576,
+    "uuid" : "a4e78dd1-6b6e-3f57-924a-4a6a2e679789",
+    "path" : "\/System\/Library\/Frameworks\/AppKit.framework\/Versions\/C\/AppKit",
+    "name" : "AppKit",
+    "CFBundleVersion" : "2487"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 6662844416,
+    "size" : 604276,
+    "uuid" : "ffd8ab66-c9ab-31df-ab80-3a3dff367ddd",
+    "path" : "\/usr\/lib\/dyld",
+    "name" : "dyld"
+  },
+  {
+    "size" : 0,
+    "source" : "A",
+    "base" : 0,
+    "uuid" : "00000000-0000-0000-0000-000000000000"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 6666485760,
+    "size" : 53236,
+    "uuid" : "e4debb6e-421d-33d0-9e17-77ae0e0fe4dc",
+    "path" : "\/usr\/lib\/system\/libsystem_pthread.dylib",
+    "name" : "libsystem_pthread.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 6666244096,
+    "size" : 241648,
+    "uuid" : "a7d3c07d-0a1e-3c4c-8fba-66905e16bf99",
+    "path" : "\/usr\/lib\/system\/libsystem_kernel.dylib",
+    "name" : "libsystem_kernel.dylib"
+  },
+  {
+    "source" : "P",
+    "arch" : "arm64e",
+    "base" : 6666903552,
+    "CFBundleShortVersionString" : "6.9",
+    "CFBundleIdentifier" : "com.apple.CoreFoundation",
+    "size" : 5074944,
+    "uuid" : "a68b8c77-1dbd-35b0-83fe-42ad58dd6629",
+    "path" : "\/System\/Library\/Frameworks\/CoreFoundation.framework\/Versions\/A\/CoreFoundation",
+    "name" : "CoreFoundation",
+    "CFBundleVersion" : "2048.1.403"
+  }
+],
+  "sharedCache" : {
+  "base" : 6662094848,
+  "size" : 4012523520,
+  "uuid" : "7906534c-5d2b-3ba8-b9c6-93a5cf1b7b50"
+},
+  "vmSummary" : "ReadOnly portion of Libraries: Total=1.4G resident=0K(0%) swapped_out_or_unallocated=1.4G(100%)\nWritable regions: Total=1.1G written=0K(0%) resident=0K(0%) swapped_out=0K(0%) unallocated=1.1G(100%)\n\n                                VIRTUAL   REGION \nREGION TYPE                        SIZE    COUNT (non-coalesced) \n===========                     =======  ======= \nAccelerate framework               128K        1 \nActivity Tracing                   256K        1 \nAttributeGraph Data               1024K        1 \nCG image                            48K        3 \nColorSync                          576K       27 \nCoreAnimation                      688K       38 \nCoreGraphics                        32K        2 \nCoreGraphics (reserved)             16K        1         reserved VM address space (unallocated)\nCoreUI image data                 1072K        7 \nFoundation                          16K        1 \nKernel Alloc Once                   32K        1 \nMALLOC                             1.1G       51 \nMALLOC guard page                  288K       18 \nSTACK GUARD                       56.1M        7 \nStack                             11.2M        7 \nVM_ALLOCATE                        128K        8 \n__AUTH                            1441K      254 \n__AUTH_CONST                      23.2M      438 \n__CTF                               824        1 \n__DATA                            9952K      423 \n__DATA_CONST                      21.3M      443 \n__DATA_DIRTY                      1292K      139 \n__FONT_DATA                        2352        1 \n__LINKEDIT                       886.6M        3 \n__OBJC_RO                         70.6M        1 \n__OBJC_RW                         2153K        1 \n__TEXT                           524.3M      459 \ndyld private memory                272K        2 \nmapped file                      164.9M       27 \nshared memory                     1360K       13 \n===========                     =======  ======= \nTOTAL                              2.8G     2379 \nTOTAL, minus reserved VM space     2.8G     2379 \n",
+  "legacyInfo" : {
+  "threadTriggered" : {
+    "queue" : "com.apple.main-thread"
+  }
+},
+  "logWritingSignature" : "a2e1dc6c63a6a204a568011fe6b841c718c8d575",
+  "trialInfo" : {
+  "rollouts" : [
+    {
+      "rolloutId" : "63508950b3714d3622fc77f7",
+      "factorPackIds" : {
+        "SIRI_MEMORY_SYNC_CONFIG" : "63508beab3714d3622fc7808"
+      },
+      "deploymentId" : 240000004
+    },
+    {
+      "rolloutId" : "6112d17137f5d11121dcd4e2",
+      "factorPackIds" : {
+
+      },
+      "deploymentId" : 240000413
+    }
+  ],
+  "experiments" : [
+    {
+      "treatmentId" : "3a3cf641-8471-4e4e-9ad4-81d0ede970fd",
+      "experimentId" : "64a84dae90d82611a0bd7d3d",
+      "deploymentId" : 400000010
+    },
+    {
+      "treatmentId" : "6dd670af-0633-45e4-ae5f-122ae4df02be",
+      "experimentId" : "64406ba83deb637ac8a04419",
+      "deploymentId" : 900000017
+    }
+  ]
+}
+}
+
+Model: MacBookPro18,4, BootROM 10151.1.1, proc 10:8:2 processors, 64 GB, SMC 
+Graphics: Apple M1 Max, Apple M1 Max, Built-In
+Display: Color LCD, 3024 x 1964 Retina, Main, MirrorOff, Online
+Memory Module: LPDDR5, Hynix
+AirPort: spairport_wireless_card_type_wifi (0x14E4, 0x4387), wl0: Aug  8 2023 04:27:44 version 20.10.1062.3.8.7.162 FWID 01-8e237e8f
+AirPort: 
+Bluetooth: Version (null), 0 services, 0 devices, 0 incoming serial ports
+Network Service: Wi-Fi, AirPort, en0
+USB Device: USB31Bus
+USB Device: USB31Bus
+USB Device: USB31Bus
+Thunderbolt Bus: MacBook Pro, Apple Inc.
+Thunderbolt Bus: MacBook Pro, Apple Inc.
+Thunderbolt Bus: MacBook Pro, Apple Inc.
