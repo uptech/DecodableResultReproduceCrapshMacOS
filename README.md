@@ -123,3 +123,6 @@ So there must be something else going on in terms of the build. Maybe Xcode is
 passing an option to the build command that is causing but SPM isn't passing
 that option. Maybe an optimization setting or who knows something else beyond
 my current understanding.
+
+After digging into to compiler optimization settings it looks Debug is set
+properly with no optimizations. So that isn't likely it.
