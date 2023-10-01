@@ -12,15 +12,9 @@ import Foundation
 extension Result: Decodable where Success: Decodable, Failure == DecodingError {
     public init(from decoder: Decoder) throws {
         do {
-            print("DREW: in Result decoding...")
             let container = try decoder.singleValueContainer()
-            print("DREW: got single value container")
-            let v = try container.decode(Success.self)
-            print("DREW: decoded to into variable v")
-            self = .success(v)
+            self = .success(try container.decode(Success.self))
         } catch let err as Failure {
-            print("DREW: failed to decode")
-            print(err)
             self = .failure(err)
         }
     }
