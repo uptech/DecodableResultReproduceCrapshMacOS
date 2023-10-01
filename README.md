@@ -71,6 +71,8 @@ extension Result: Decodable where Success: Decodable, Failure == DecodingError {
 When running in Xcode with the debugger we can see that the crash is related to
 the `decoder.decode()` call.
 
+I have also provided a full crash report, [here](https://github.com/uptech/DecodableResultReproduceCrapshMacOS/blob/main/CrashReport.txt?raw=true).
+
 ![alt text](https://github.com/uptech/DecodableResultReproduceCrapshMacOS/blob/main/screenshots/crash_stack_trace.png?raw=true)
 
 ![alt text](https://github.com/uptech/DecodableResultReproduceCrapshMacOS/blob/main/screenshots/line_code_highlighted_when_crashed.png?raw=true)
@@ -98,6 +100,8 @@ need the generic to work again with `decode()`. But at least it helps give us
 some more confidence that the issue is actually with the fact that the struct
 is generic.
 
+## A Theory
+
 Also, in the stack trace when the crash occurs the next step up is related to
 the witness table. This makes me think that part of the dynamic dispatch and
 looking up of the method is failing and causing the crash.
@@ -106,4 +110,16 @@ looking up of the method is failing and causing the crash.
 
 ![alt text](https://github.com/uptech/DecodableResultReproduceCrapshMacOS/blob/main/screenshots/getTypeContextDescriptor_stack_step.png?raw=true)
 
-I have also provided a full crash report, [here](https://github.com/uptech/DecodableResultReproduceCrapshMacOS/blob/main/CrashReport.txt?raw=true).
+The weird though is that I made another sample project that is simply a CLI
+built with SPM that does the same exact thing as the code here. But it runs
+without problem.
+
+But within the macOS SwiftUI application it crashes. I am not sure why if it is
+related to dynamic dispatch why the behavior would be any different for the
+macOS application than the CLI. They are built in the same language with the
+same version of compiler. 
+
+So there must be something else going on in terms of the build. Maybe Xcode is
+passing an option to the build command that is causing but SPM isn't passing
+that option. Maybe an optimization setting or who knows something else beyond
+my current understanding.
